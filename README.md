@@ -29,42 +29,47 @@ No se necesitan librerías externas ni frameworks: **todo es JavaScript puro (va
 1. **Clonar o descargar** el repositorio:
    ```bash
    git clone https://github.com/tu-usuario/nombre-repo.git
-  o descargar el ZIP desde GitHub y descomprimirlo.
+o descargar el ZIP desde GitHub y descomprimirlo.
 
-Abrir el archivo index.html en tu navegador:
+## Abrir el archivo `index.html` en tu navegador:
 
-Doble clic en index.html, o
+- Doble clic en `index.html`, o  
+- Abrirlo desde el editor con **Live Server** (opcional).
 
-Abrirlo desde el editor con Live Server (opcional).
+## En la página:
 
-En la página:
+- Escribe un nombre en el campo de texto.  
+- Haz clic en **“Añadir”** para agregarlo a la lista.  
+- Una vez que haya varios nombres, haz clic en **“Sortea amigo”** para que el programa elija uno al azar.
 
-Escribe un nombre en el campo de texto.
+---
 
-Haz clic en “Añadir” para agregarlo a la lista.
+## ⚡ Lógica implementada (`app.js`)
 
-Una vez que haya varios nombres, haz clic en “Sortea amigo” para que el programa elija uno al azar.
-⚡ Lógica implementada (app.js)
+- **Agregar nombres:** Se valida que el campo no esté vacío antes de insertar en el arreglo global `amigos`.  
+- **Mostrar lista:** La función `actualizarLista()` recorre el arreglo y muestra los nombres en una lista `<ul>`.  
+- **Sorteo aleatorio:** `sorteaAmigo()` elige un índice al azar usando `Math.random()` y muestra el resultado en la página.  
+- **Limpieza de campos:** `limpiarCaja()` borra el input luego de cada inserción.
 
-Agregar nombres: Se valida que el campo no esté vacío antes de insertar en el arreglo global amigos.
+---
 
-Mostrar lista: La función actualizarLista() recorre el arreglo y muestra los nombres en una lista <ul>.
+## 🧩 Posibles Problemas y Soluciones
 
-Sorteo aleatorio: sorteaAmigo() elige un índice al azar usando Math.random() y muestra el resultado en la página.
+| Problema | Causa probable | Solución |
+|----------|---------------|---------|
+| No se ve la lista al añadir nombres | `id` de la lista en `index.html` no coincide con el usado en `app.js`. | Revisar que el elemento en HTML tenga `id="listaAmigos"`. |
+| No se elige amigo secreto | No se ingresaron nombres antes de sortear. | Asegúrate de agregar al menos un nombre antes de pulsar **“Sortea amigo”**. |
+| Cambios en HTML/CSS no se reflejan | Caché del navegador. | Refresca con **Ctrl + F5** o limpia la caché. |
 
-Limpieza de campos: limpiarCaja() borra el input luego de cada inserción.
+---
 
-🧩 Posibles Problemas y Soluciones
-Problema	Causa probable	Solución
-No se ve la lista al añadir nombres	id de la lista en index.html no coincide con el usado en app.js.	Revisar que el elemento en HTML tenga id="listaAmigos".
-No se elige amigo secreto	No se ingresaron nombres antes de sortear.	Asegúrate de agregar al menos un nombre antes de pulsar “Sortea amigo”.
-Cambios en HTML/CSS no se reflejan	Caché del navegador.	Refresca con Ctrl + F5 o limpia la caché.
-📝 Notas de Desarrollo
+## 📝 Notas de Desarrollo
 
-El archivo app.js fue diseñado para funcionar con el HTML y CSS existentes, sin dependencias externas.
+- El archivo `app.js` fue diseñado para funcionar con el HTML y CSS existentes, **sin dependencias externas**.  
+- El código está escrito en **JavaScript ES6**, por lo que funciona en navegadores modernos sin transpilación.
 
-El código está escrito en JavaScript ES6, por lo que funciona en navegadores modernos sin transpilación.
+---
 
-
-✍️ Autor: Sebastian Diaz
+✍️ **Autor:** Sebastian Diaz  
 💡 Proyecto académico / práctico de lógica en JavaScript.
+
