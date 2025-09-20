@@ -9,7 +9,6 @@ function agregarAmigo(){
        
     }
 limpiarCaja();
-console.log(amigos);
 actualizarLista(amigos);
 
 }
